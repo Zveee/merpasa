@@ -17,16 +17,33 @@
 	position: relative;
 
 	&__banner {
+		width: 100%;
+		height: 100%;
+		perspective: 1000px;
+	}
+
+	& .front {
 		height: 100%;
 		width: 100%;
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-size: cover;
+	}
 
-		&:hover {
-			transform: rotateY(-90deg);
-		}
+	&__box {
+		height: 100%;
+		width: 100%;
 
+		z-index: 10;
+		position: relative;
+
+		transform-style: preserve-3d;
+    	transition: all 0.4s ease-out;
+    	transform-origin: 150px 150px -150px;
+	}
+
+	&__banner:hover &__box {
+		transform: rotateY(-90deg);
 	}
 
 	&:first-child &__banner{
@@ -39,6 +56,22 @@
 		width: calc(~"100% + 20px");
 	}
 
+	&__info {
+		list-style-type: none;
+		margin-top: 245px;
+		letter-spacing: 0.05em;
+		padding-right: 65px;
+
+		&-item {
+			margin-bottom: 21px;
+
+			& a:hover {
+				color: #2693ff;
+			}
+		}
+
+	}
+
 	&__btn {
 		display: block;
 		padding: 25px 12px 22px;
@@ -48,6 +81,10 @@
 		font-weight: 700;
 		min-height: 120px;
 		box-sizing: border-box;
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		box-shadow: 0 50px 40px -30px rgba(0, 0, 0, 0.2);
 	}
 
 	&__description {
@@ -64,6 +101,28 @@
 	}
 }
 
+.front {
+	transform: rotateY(0deg);
+	z-index: 2;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: visible; 
+    transform-origin: 0 0;
+}
+
+.side {
+	background-color: #5d5d5d;
+	transform: rotateY(90deg);
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: visible; 
+    transform-origin: 0 0;
+    left: 100%;
+}
+
 a {
 	text-decoration: none;
 	color: @text-color;
@@ -71,7 +130,7 @@ a {
 
 
 
-.package-equipment .block__banner {
+.package-equipment .front {
 	background-image: url(../../img/bkg1.png);
 
 }
@@ -80,7 +139,7 @@ a {
 	background-color: #024b9d;
 }
 
-.package-materials .block__banner {
+.package-materials .front {
 	background-image: url(../../img/bkg2.png);
 }
 
@@ -88,7 +147,7 @@ a {
 	background-color: #0059b1;
 }
 
-.automatic-equipment .block__banner {
+.automatic-equipment .front {
 	background-image: url(../../img/bkg3.png);
 }
 
@@ -96,7 +155,7 @@ a {
 	background-color: #0066cc;
 }
 
-.technological-equipment .block__banner {
+.technological-equipment .front {
 	background-image: url(../../img/bkg4.png);
 }
 
@@ -104,7 +163,7 @@ a {
 	background-color: #0f78e0;
 }
 
-.maintenance .block__banner {
+.maintenance .front {
 	background-image: url(../../img/bkg5.png);
 }
 
