@@ -64,20 +64,29 @@ function changeTab(event) {
       currentBtn.parentNode.parentNode.classList.add('active');
       break;
   }
+}
 
-  // currentBtn.parentNode.parentNode.classList.add('active');
+function changeUrl(event) {
+  var currentBtn = event.target;
+  var currentSection = currentBtn.parentNode.parentNode;
 
-    // for(var j = 0; j < tabs.length; j++) {
-    //   console.log(tabs[j]);
-    //   tabs[j].parentNode.parentNode.classList.remove('active');
-    //   content[j].classList.remove('active');
-    // }
-   
-    // currentBtn.parentNode.nextElementSibling.classList.add('.active');
-    // var link = currentLink.getAttribute('href');
-    // document.querySelector(link).classList.add('.active');
+  if (typeof (history.pushState) != "undefined") {
+    var isActive = currentSection.classList.contains('active');
+    var currentUrl = currentSection.getAttribute('id');
+    var currentTitle = currentSection.getAttribute('data-title');
+    var obj = { Title: currentTitle, Url: currentUrl };
+
+    if (isActive) {
+      history.pushState(obj, obj.Title, obj.Url);
+    } else {
+      history.back();
+    }
+  } else {
+    console.log("Browser does not support HTML5.");
+  }
 }
 
 for(var i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', changeTab);
+  tabs[i].addEventListener('click', changeUrl);
 }
