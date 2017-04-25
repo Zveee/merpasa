@@ -1,0 +1,52 @@
+.page-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: @text-color;
+	background-color: #a71b3b;
+	opacity: 0.9;
+	padding: 0 20px;
+	box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+
+	z-index: 1200;
+
+	&__inner {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+
+	&__tel {
+		text-decoration: none;
+		color: @text-color;
+		font-size: 29px;
+		font-weight: 700;
+		letter-spacing: 0.04 em; 
+	}
+
+	&__logo {
+		margin: 55px 0;	
+	}
+
+	&__mail {
+		text-decoration: none;
+		color: @text-color;
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: 0.02 em;
+	}
+}
+
+.tel, .mail {
+	width: 20%;
+	text-align: center;
+	margin-top: 90px;
+}
+
+.page-footer a {
+	padding: 5px;
+	display: inline-block;
+}
+
+

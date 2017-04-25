@@ -51,11 +51,16 @@
 
 var tabs = document.querySelectorAll('.block__btn');
 var content = document.querySelectorAll('.block__description');
+var blocks = document.querySelectorAll('section.block');
 // var home = document.querySelectorAll('.navigation');
 
 function changeTab(event) {
   var currentBtn = event.target;
   var isActive = currentBtn.parentNode.parentNode.classList.contains('active');
+
+  // for(var i = 0; i < blocks.length; i++) {
+  //   blocks[i].style.display = "none";
+  // }
 
   switch (isActive) {
     case true:
@@ -97,3 +102,15 @@ for(var i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', changeTab);
   tabs[i].addEventListener('click', changeUrl);
 }
+
+// function changeCSS(cssFile, cssLinkIndex) {
+
+//     var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+//     var newlink = document.createElement("link");
+//     newlink.setAttribute("rel", "stylesheet");
+//     newlink.setAttribute("type", "text/css");
+//     newlink.setAttribute("href", cssFile);
+
+//     document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+// }

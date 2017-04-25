@@ -213,7 +213,6 @@ gulp.task('serve', gulp.series('build', function() {
     port: 3000,                                             // порт, на котором будет работать сервер
     startPath: '/pug/index.html',                           // файл, который буде открываться в браузере при старте сервера
     // open: false                                          // возможно, каждый раз стартовать сервер не нужно...
-    tunnel: true;
   });
 
   gulp.watch(                                               // следим за HTML
