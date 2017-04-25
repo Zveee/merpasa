@@ -38,8 +38,8 @@
 		position: relative;
 
 		transform-style: preserve-3d;
-    	transition: all 0.4s ease-out;
-    	transform-origin: 150px 150px -150px;
+    transition: all 0.4s ease-out;
+    transform-origin: 150px 150px -150px;
 	}
 
 	&__banner:hover &__box {
@@ -104,7 +104,7 @@
 		box-sizing: border-box;
 
 		& .block__text {
-			max-width: 600px;
+			max-width: 600px; 
 		}
 	}
 
@@ -117,6 +117,11 @@
 	order: -1;
 	z-index: 1000;
 	transition: order .4s ease-out;
+	
+	& .block__banner {
+		margin-left: -20px;
+		width: calc(~"100% + 20px");
+	}
 
 	& .block__description {
 		display: block;
@@ -140,6 +145,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 	backface-visibility: visible; 
     transform-origin: 0 0;
     left: 100%;
@@ -158,7 +164,7 @@ a {
 }
 
 .package-equipment .block__btn {
-	background-color: #024b9d;
+	background-color: #1a48a6;
 }
 
 .package-materials .front {

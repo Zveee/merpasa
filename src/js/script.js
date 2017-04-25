@@ -51,6 +51,7 @@
 
 var tabs = document.querySelectorAll('.block__btn');
 var content = document.querySelectorAll('.block__description');
+// var home = document.querySelectorAll('.navigation');
 
 function changeTab(event) {
   var currentBtn = event.target;
@@ -75,11 +76,17 @@ function changeUrl(event) {
     var currentUrl = currentSection.getAttribute('id');
     var currentTitle = currentSection.getAttribute('data-title');
     var obj = { Title: currentTitle, Url: currentUrl };
+    var mainPage = { Title: 'МЕРПАСА', Url: 'index.html'};
+    // var homeUrl = home.getAttribute('id');
+    // var homeTitle = home.getAttribute('data-title');
+    // var index = { Title: homeTitle, Url: homeUrl };
+    
 
     if (isActive) {
       history.pushState(obj, obj.Title, obj.Url);
     } else {
-      history.back();
+      // history.back();
+      history.pushState(mainPage, mainPage.Title, mainPage.Url);
     }
   } else {
     console.log("Browser does not support HTML5.");
