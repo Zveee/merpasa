@@ -19,7 +19,7 @@
 	&__banner {
 		width: 100%;
 		height: 100%;
-		perspective: 1000px;
+		// perspective: 1000px;
 	}
 
 	& .front {
@@ -51,6 +51,8 @@
 		width: calc(~"100% + 20px");
 	}
 
+	&:first-child &__btn { margin-left: 37px;}
+
 	&:last-child &__banner{
 		margin-right: -20px;
 		width: calc(~"100% + 20px");
@@ -58,9 +60,9 @@
 
 	&__info {
 		list-style-type: none;
-		margin-top: 245px;
+		margin-top: 220px;
 		letter-spacing: 0.05em;
-		padding-right: 65px;
+		padding-right: 40px;
 
 		&-item {
 			margin-bottom: 21px;
@@ -123,6 +125,8 @@
 		width: calc(~"100% + 20px");
 	}
 
+	& .block__btn { margin-left: 37px;}
+
 	& .block__description {
 		display: block;
 	}
@@ -145,7 +149,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 	backface-visibility: visible; 
     transform-origin: 0 0;
     left: 100%;
